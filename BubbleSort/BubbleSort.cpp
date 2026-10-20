@@ -10,9 +10,11 @@
 #define Or ||
 #define And &&
 
+//function defines
 void BubbleSort(int arr[6], int size);
-
 void OutputArray(int arr[6], int size);
+
+
 
 int main() 
 {
@@ -30,25 +32,33 @@ void BubbleSort(int arr[6], int size)
         arrayy[item] = *(arr + item);
     }
 
+    //the actual bubble sort part
     bool swapped = True;
     while (swapped = True)
     {
+        //resets swapped
         swapped = False;
+
+        //goes through each item besides the last
         for (int item = 0; item < (size - 1); item++)
         {
+            //checks if the item is bigger than the next
             if (arrayy[item] > arrayy[item + 1])
             {
+                //swaps the 2 items and updates swapped
                 int temp = arrayy[item];
                 arrayy[item] = arrayy[item + 1];
                 arrayy[item + 1] = temp;
                 swapped = True;
             }
         }
+        //checks to see if swapped, if not then can exit as it is sorted
         if (swapped == False)
         {
             break;
         }
     }
+    //outputs the array to console
     OutputArray(arrayy, size);
 }
 
@@ -62,6 +72,7 @@ void OutputArray(int arr[6], int size)
         arrayy[item] = *(arr + item);
     }
 
+    //outputs each part of the array
     for (int counter = 0; counter < size; counter++)
     {
         if (counter == (size - 1))
